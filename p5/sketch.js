@@ -18,7 +18,7 @@ function preload() {
     singleNotes = new Array("A","B","C","D","E","F","G");
     notes = new Array();
     for(var i = 0; i < singleNotes.length; i++) {
-        notes[i] = loadSound('assets/'+singleNotes[i]+'.mp3');
+        notes[i] = loadSound('p5/notes/'+singleNotes[i]+'.mp3');
     }
 }
 
