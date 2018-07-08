@@ -18,7 +18,7 @@ function preload() {
     singleNotes = new Array("A","B","C","D","E","F","G");
     notes = new Array();
     for(var i = 0; i < singleNotes.length; i++) {
-        notes[i] = loadSound('p5/notes/'+singleNotes[i]+'.mp3');
+        notes[i] = loadSound('notes/'+singleNotes[i]+'.mp3');
     }
 }
 
@@ -32,6 +32,7 @@ function setup() {
 }
 
 function draw() {
+    
     background(0);
     fill(constrain(textColor, 0, 255));
     text(singleNotes[index], width/2, height/2);

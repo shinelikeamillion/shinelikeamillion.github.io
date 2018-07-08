@@ -11961,7 +11961,7 @@ var p5 = function(sketch, node, sync) {
     this._start();
   } else {
     if (document.readyState === 'complete') {
-      this._start();
+    this._start();
     } else {
       window.addEventListener('load', this._start.bind(this), false);
     }
