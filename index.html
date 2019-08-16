@@ -1,27 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>shinelikeamillion.io</title>
-  </head>
 
-  <body>
-    <a> Doing something special..</a>
-    <script language="javascript">
+<head>
+  <title>shinelikeamillion.io</title>
+  <script language="javascript">
 
-        window.onload = function(){
-          getRequest();
-        }
-  
-        function getRequest() {
-          
-          var url = location.search;
-           var theRequest = new Object();
-           if (url.indexOf("?") != -1) {
-             if(window.console) console.log(location.href);
-             var path = "p5/"+url.substr(1)+"/"+url.substr(1)+".html";
-             document.location.href = path;
-           }
-        }
-    </script>
-  </body>
+    window.onload = function () {
+      getRequest();
+    }
+
+    function getRequest() {
+
+      var url = location.search;
+      var theRequest = new Object();
+      if (url.indexOf("?") != -1) {
+        if (window.console) console.log(location.href);
+        var path = "p5/" + url.substr(1) + "/" + url.substr(1) + ".html";
+        document.location.href = path;
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <a> Doing something special..</a>
+  </br>
+  <a> Just take a break, and hope you all doing well..</a>
+  <div>
+    <iframe 
+      frameborder="no" 
+      border="0" 
+      marginwidth="0" 
+      marginheight="0" 
+      width=330 
+      height=450
+      src="//music.163.com/outchain/player?type=4&id=350330919&auto=1&height=430"/>
+    </div>
+</body>
+
 </html>
