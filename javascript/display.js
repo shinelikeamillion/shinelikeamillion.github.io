@@ -7,7 +7,7 @@ let lines = function ($) {
         $.noLoop()
         $.strokeWeight(0.5)
         $.num = 3
-        $.size = 300 / 7
+        $.size = container.width / 7
         for (let i = 0; i < $.height; i += 2) {
             $.line(0, i, $.width, i)
 
@@ -26,7 +26,7 @@ let lines = function ($) {
 
 let a = function ($) {
 
-    $.step = 9
+    $.step = 6
     $.rate = 0
     $.preload = _ => {
         $.bg = $.loadImage('./sources/dylan.jpg')
@@ -34,7 +34,7 @@ let a = function ($) {
     $.setup = _ => {
         var container = $.select('#container')
         $.createCanvas(container.width, container.height)
-        rate = $.bg.width < $.bg.height ? $.bg.width / $.width : $.bg.height / $.height
+        $.rate = $.bg.width < $.bg.height ? $.bg.width / $.width : $.bg.height / $.height
         $.noLoop()
         $.noStroke()
         $.fill(0)
