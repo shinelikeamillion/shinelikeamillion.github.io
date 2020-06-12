@@ -130,11 +130,11 @@
     var container = document.getElementById("container");
     if (container.firstChild) container.removeChild(container.firstChild);
 
-    new p5(displays[index], 'container');
     if (id == 'left') index--;
     if (id == 'right') index++;
     if (index < 0) index = displays.length - 1;
     index = index % displays.length;
+    new p5(displays[index], 'container');
   }
 
   document.addEventListener('keydown', (e) => {

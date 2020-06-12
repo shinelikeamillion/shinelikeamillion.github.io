@@ -29,7 +29,7 @@ let a = function ($) {
     $.step = 9
     $.rate = 0
     $.preload = _ => {
-        $.bg = $.loadImage('sources/dylan.jpg')
+        $.bg = $.loadImage('./sources/dylan.jpg')
     }
     $.setup = _ => {
         var container = $.select('#container')
