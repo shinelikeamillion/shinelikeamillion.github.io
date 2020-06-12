@@ -3,11 +3,27 @@
 
 <head>
   <title>shinelikeamillion.io</title>
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+  <link rel="icon" data-emoji="🙋" type="image/png">
   <script language="javascript">
+    const favicon = document.querySelector("link[rel=icon]");
+    if (favicon) {
+      const emoji = favicon.getAttribute("data-emoji");
+
+      if (emoji) {
+        const canvas = document.createElement("canvas");
+        canvas.height = 64;
+        canvas.width = 64;
+
+        const ctx = canvas.getContext("2d");
+        ctx.font = "64px serif";
+        ctx.fillText(emoji, 0, 64);
+
+        favicon.href = canvas.toDataURL();
+      }
+    }
 
     window.onload = function () {
-      getRequest();
+      // getRequest();
     }
 
     function getRequest() {
@@ -15,27 +31,53 @@
       var url = location.search;
       var theRequest = new Object();
       if (url.indexOf("?") != -1) {
-        if (window.console) console.log(location.href);
         var path = "p5/" + url.substr(1) + "/" + url.substr(1) + ".html";
         document.location.href = path;
       }
     }
+
+    function randomEmoji() {
+      return String.fromCharCode(Math.floor(0x1F601, + Math.random * (0x1F64F - 0x1F600)));
+    }
+
   </script>
+
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    #content {
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>
 </head>
 
 <body>
-  <a> Doing something special..</a>
-  </br>
-  <a> Just take a break, and hope you all doing well..</a>
-  <div>
-    <iframe 
-      frameborder="no" 
-      border="0" 
-      marginwidth="0" 
-      marginheight="0" 
-      width=330 
-      height=450
-      src="//music.163.com/outchain/player?type=4&id=350330919&auto=1&height=430"/>
+  <div id="content">
+    <a> Doing something special,</a>
+    </r>
+    </br>
+    <a> Just need take a break, and hope you all doing well. </a>
+    <a href="https://www.notion.so/SeanMatro-d238ac31d11f4b068da534f9fffa6978">👋</a>
+    </br>
+    <a href="sketch.html">-</a>
+    <div>
+      <iframe frameborder="no" marginwidth="0" marginheight="0" width=330 height=450
+        src="//music.163.com/outchain/player?type=4&id=350330919&auto=1&height=430" />
+    </div>
   </div>
 </body>
 

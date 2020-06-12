@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <script src="./javascript/p5.js"></script>
+  <script src="./javascript/display.js"></script>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    #frame {
+      /* center the frame */
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      width: 450px;
+      height: 540px;
+      /* center the children */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url(./sources/frame.png);
+    }
+
+    #frame a {
+      margin-top: 155px;
+      margin-left: 130px;
+      position: fixed;
+      font-family: inherit;
+      opacity: 0.1;
+      font-size: 6px;
+      text-decoration-line: none;
+    }
+
+    #container {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background-color: #fff;
+    }
+
+    #shadow {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      box-shadow:
+        inset 3px -3px 2px rgba(255, 255, 255, 1),
+        inset -3px 3px 2px rgba(0, 0, 0, .2);
+    }
+
+    #dirt {
+      opacity: .2;
+      position: fixed;
+      width: 450px;
+      height: 540px;
+      object-fit: cover;
+      background-image: url(./sources/texure.png);
+      pointer-events: none;
+    }
+
+    #buttons {
+      top: 50%;
+      left: 50%;
+      margin-top: 270px;
+      position: absolute;
+      /* positoin from the center */
+      transform: translate(-50%, -50%);
+    }
+
+    #buttons span {
+      display: -moz-inline-box;
+      display: inline-block;
+      width: 10px;
+    }
+
+    #buttons a {
+      width: 25px;
+      height: 25px;
+      text-align: center;
+      line-height: 22px;
+      font-size: 18px;
+      display: inline-block;
+      font-family: inherit;
+      color: #999999;
+      user-select: none;
+      -moz-user-select: none;
+      border: 1px solid #999999;
+      border-radius: 15px;
+      transform: scale(var(--scale, .8));
+      transition: transform .3s cubic-bezier(0.38, -0.12, 0.24, 1.91);
+    }
+
+    a:hover {
+      --scale: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="frame">
+    <div id='container'></div>
+    <div id='shadow'></div>
+    <a href="https://twitter.com/sean_matro" target="_blank">@sean_matro</a>
+    <div id='dirt'></div>
+  </div>
+
+  <div id="buttons">
+    <a onclick="onClick('left')">↞</a>
+    <span></span>
+    <a onclick="onClick('right')">↠</a>
+  </div>
+</body>
+
+<script>
+  new p5(displays[0], 'container');
+
+  var index = 0;
+  function onClick(id) {
+    var container = document.getElementById("container");
+    if (container.firstChild) container.removeChild(container.firstChild);
+
+    new p5(displays[index], 'container');
+    if (id == 'left') index--;
+    if (id == 'right') index++;
+    if (index < 0) index = displays.length - 1;
+    index = index % displays.length;
+  }
+
+  document.addEventListener('keydown', (e) => {
+    switch (e.code) {
+      case 'ArrowLeft':// left
+        onClick('left');
+        break;
+      case 'ArrowRight':// right
+        onClick('right');
+        break;
+    }
+  });
+</script>
+
+</html>
