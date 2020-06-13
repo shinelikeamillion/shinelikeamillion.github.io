@@ -123,18 +123,21 @@
 </body>
 
 <script>
-  new p5(displays[0], 'container');
+
+  let p = new p5(displays[0], 'container');
 
   var index = 0;
   function onClick(id) {
     var container = document.getElementById("container");
-    if (container.firstChild) container.removeChild(container.firstChild);
+    if (container.firstChild) {
+      p.remove();
+    }
 
     if (id == 'left') index--;
     if (id == 'right') index++;
     if (index < 0) index = displays.length - 1;
     index = index % displays.length;
-    new p5(displays[index], 'container');
+    p = new p5(displays[index], 'container');
   }
 
   document.addEventListener('keydown', (e) => {
