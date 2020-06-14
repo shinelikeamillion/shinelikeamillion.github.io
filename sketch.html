@@ -33,14 +33,15 @@
       background-image: url(./sources/frame.png);
     }
 
-    #frame a {
-      margin-top: 155px;
-      margin-left: 130px;
+    #frame>#social {
       position: fixed;
       font-family: inherit;
       opacity: 0.1;
       font-size: 6px;
       text-decoration-line: none;
+      user-select: none;
+      -webkit-user-select: none;
+      transform: translate(130px, 155px);
     }
 
     #container {
@@ -70,18 +71,15 @@
     }
 
     #buttons {
-      top: 50%;
-      left: 50%;
-      margin-top: 270px;
-      position: absolute;
-      /* positoin from the center */
-      transform: translate(-50%, -50%);
+      position: fixed;
+      bottom: 0;
+      transform: translateY(10px);
     }
 
     #buttons span {
       display: -moz-inline-box;
       display: inline-block;
-      width: 10px;
+      width: 20px;
     }
 
     #buttons a {
@@ -111,20 +109,20 @@
   <div id="frame">
     <div id='container'></div>
     <div id='shadow'></div>
-    <a href="https://twitter.com/sean_matro" target="_blank">@sean_matro</a>
+    <a id='social'>@sean_matro</a>
     <div id='dirt'></div>
-  </div>
 
-  <div id="buttons">
-    <a onclick="onClick('left')">↞</a>
-    <span></span>
-    <a onclick="onClick('right')">↠</a>
+    <div id="buttons">
+      <a onclick="onClick('left')">↞</a>
+      <span></span>
+      <a onclick="onClick('right')">↠</a>
+    </div>
   </div>
 </body>
 
 <script>
 
-  let p = new p5(displays[0], 'container');
+  let p = new p5(displays[1], 'container');
 
   var index = 0;
   function onClick(id) {
@@ -150,6 +148,52 @@
         break;
     }
   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  var social = document.getElementById('social');
+  social.setAttribute('href', "https://twitter.com/sean_matro");
+  social.setAttribute('target', "_blank");
 </script>
 
 </html>
