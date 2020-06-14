@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        a {
+            text-align: center;
+            font-size: 200px;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <a onclick="getEmoji()"></a>
+</body>
+
+<script language="javascript">
+    function getEmoji() {
+        let newEmoji = randomEmoji();
+        document.querySelector('title').innerHTML = newEmoji;
+        document.querySelector('a').innerHTML = newEmoji;
+    }
+    function randomInt(min, max) {
+        var result = parseInt(Math.random() * (max - min) + min);
+        // filter
+        if (result >= 0x1F650 && result < 0x1F680) {
+            result = randomInt(min, max);
+        }
+        return result;
+    }
+
+    function randomEmoji() {
+        return String.fromCodePoint(randomInt(0x1F601, 0x1F6B9 + 1));
+    }
+    getEmoji();
+</script>
+
+</html>
