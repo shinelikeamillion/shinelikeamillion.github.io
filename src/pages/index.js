@@ -1,0 +1,48 @@
+import React from "react"
+
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import { intoFavionWithEmoji } from "../utils/utils"
+import RandomEmoji from "../components/randomEmoji"
+
+const IndexPage = () => {
+  intoFavionWithEmoji()
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center",
+          userSelect: "none",
+          minHeight: "100vh",
+        }}
+      >
+        <div>
+          <a> Doing something special,</a>
+          <br />
+          <a> Just need take a break, and hope you all doing well. </a>
+          <a href="https://www.notion.so/SeanMatro-d238ac31d11f4b068da534f9fffa6978">
+            👋
+          </a>
+          <br />
+          <a href="./p5/index.html">-</a>
+          <div>
+            <iframe
+              frameBorder="no"
+              marginWidth="0"
+              marginHeight="0"
+              width="330px"
+              height="450px"
+              src="http://music.163.com/outchain/player?type=4&id=350330919&auto=0&height=430"
+            />
+          </div>
+        </div>
+      </div>
+    </Layout>
+  )
+}
+
+export default IndexPage

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="./p5js/p5.js"></script>
+    <script src="./p5js/display.js"></script>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      #frame {
+        /* center the frame */
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        width: 450px;
+        height: 540px;
+        /* center the children */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(./images/frame.png);
+      }
+
+      #frame > #social {
+        position: fixed;
+        font-family: inherit;
+        opacity: 0.1;
+        font-size: 6px;
+        text-decoration-line: none;
+        user-select: none;
+        -webkit-user-select: none;
+        transform: translate(130px, 155px);
+      }
+
+      #container {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background-color: #fff;
+      }
+
+      #shadow {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        box-shadow: inset 3px -3px 2px rgba(255, 255, 255, 1),
+          inset -3px 3px 2px rgba(0, 0, 0, 0.2);
+      }
+
+      #dirt {
+        opacity: 0.2;
+        position: fixed;
+        width: 450px;
+        height: 540px;
+        object-fit: cover;
+        background-image: url(./images/texure.png);
+        pointer-events: none;
+      }
+
+      #buttons {
+        position: fixed;
+        bottom: 0;
+        transform: translateY(10px);
+      }
+
+      #buttons span {
+        display: -moz-inline-box;
+        display: inline-block;
+        width: 20px;
+      }
+
+      #buttons a {
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        line-height: 22px;
+        font-size: 18px;
+        display: inline-block;
+        font-family: inherit;
+        color: #999999;
+        user-select: none;
+        -moz-user-select: none;
+        border: 1px solid #999999;
+        border-radius: 15px;
+        transform: scale(var(--scale, 0.8));
+        transition: transform 0.3s cubic-bezier(0.38, -0.12, 0.24, 1.91);
+      }
+
+      a:hover {
+        --scale: 1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="frame">
+      <div id="container"></div>
+      <div id="shadow"></div>
+      <a id="social">@sean_matro</a>
+      <div id="dirt"></div>
+
+      <div id="buttons">
+        <a onclick="onClick('left')">↞</a>
+        <span></span>
+        <a onclick="onClick('right')">↠</a>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    let p = new p5(displays[1], "container")
+
+    var index = 0
+    function onClick(id) {
+      var container = document.getElementById("container")
+      if (container.firstChild) {
+        p.remove()
+      }
+
+      if (id == "left") index--
+      if (id == "right") index++
+      if (index < 0) index = displays.length - 1
+      index = index % displays.length
+      p = new p5(displays[index], "container")
+    }
+
+    document.addEventListener("keydown", e => {
+      switch (e.code) {
+        case "ArrowLeft": // left
+          onClick("left")
+          break
+        case "ArrowRight": // right
+          onClick("right")
+          break
+      }
+    })
+
+    var social = document.getElementById("social")
+    social.setAttribute("href", "https://twitter.com/sean_matro")
+    social.setAttribute("target", "_blank")
+  </script>
+</html>
