@@ -11,18 +11,15 @@ $seting_sping: 300ms transform ease-in-out
   height: 100vh
   background-color: $main_bg_color
   color: #DDD
+  position: relative
 
   .left
     width: 80px
     align-items: center
     text-align: center
-
-  .left
+    background-color: #232529
     a
       display: block
-
-  .left
-    background-color: #232529
 
     .logo
       height: 160px
@@ -40,137 +37,197 @@ $seting_sping: 300ms transform ease-in-out
       padding: 0
       list-style: none
 
+      .active
+        background-color: #333
+        border-right: 3px solid #EFC985
+        a
+          opacity: 1
+
       li
         margin-left: 0
-        margin-top: 40px
+        margin-top: 20px
+        cursor: pointer
+        padding: 10px
+        height: 70px
         border-right: 3px solid transparent
+
+        a
+          margin-top: 4px
+          font-size: 10px
+          opacity: 0
+          transition: 200ms ease
 
       li:hover
         background-color: #333
-        border-right: 3px solid #EFC985
+
+        a
+          opacity: 1
 
       svg
         width: 30px
 
+      // for optical corrections here
+      li:last-child svg
+        margin-top: 4px
+      li:last-child a
+        margin-top: -2px
+
   .main
     flex: 1
+    min-width: 510px
     display: flex
-    flex-direction: column
-    position: relative
 
-    .title
-      margin-left: $main_margin_left
-      margin-top: 40px
+    .content
+      flex: 1
+      z-index: 1
+      position: relative
+
+      .title
+        margin-left: $main_margin_left
+        margin-top: 40px
 
       h1
         margin-bottom: 1px
       span
         width: 100%
 
-    .info
-      margin-left: $main_margin_left
-      display: flex
-      max-width: 540px
-
-      .item_info
-        margin-top: 10px
+      .info
+        margin-left: $main_margin_left
         display: flex
-        align-items: center
-        justify-content: left
-        flex: 1
+        max-width: 540px
 
-        .item_content
-          .content_top
-            display: flex
-            align-items: center
+        .item_info
+          margin-top: 10px
+          display: flex
+          align-items: center
+          justify-content: left
+          flex: 1
 
-            .top_name
-              font-size: 10px
-              margin-right: 8px
-              color: #BBB
-            .top_change
-              margin-top: 6px
-              font-size: 12px
+          .item_content
+            .content_top
+              display: flex
+              align-items: center
+
+              .top_name
+                font-size: 10px
+                margin-right: 8px
+                color: #BBB
+              .top_change
+                margin-top: 6px
+                font-size: 11px
+                line-height: 1
+                color: #ffdf28
+
+            span
+              display: inline-block
               line-height: 1
 
-          span
+            .value
+              font-size: 18px
+              letter-spacing: .1em
+
+          svg
+            width: 36px
+            height: 36px
+            margin-right: 10px
+
+      .map
+        position: absolute
+        z-index: -1
+        top: 0
+        width: 100%
+        height: 100vh
+        display: flex
+        padding-top: 100px
+        align-items: center
+
+        #map
+          width: 100%
+          height: 100%
+          background-color: $main_bg_color
+
+        .toolbar
+          position: absolute
+          left: $main_margin_left
+          bottom: 30px
+          width: 80px
+          justify-content: space-between
+          display: flex
+
+          a
+            width: 26px
+            height: 26px
             display: inline-block
-            line-height: 1
+            text-align: center
+            cursor: pointer
+          .setting
+            transform-origin: center
+            transform: rotate(0deg)
+            transition: $seting_sping
+          .setting:hover
+            transform: rotate(90deg)
+            transition: $seting_sping
 
-          .value
-            font-size: 18px
-            letter-spacing: .1em
+          .search
+            transform-origin: right center
+            transform: rotate(0deg)
+            transition: $seting_sping
+          .search:hover
+            transform: rotate(30deg)
+            transition: $seting_sping
 
-        svg
-          width: 36px
-          height: 36px
-          margin-right: 10px
-
-    .map
-      position: absolute
-      z-index: 0
-      top: 0
-      width: 100%
-      height: 100vh
+    .right
+      width: 350px
+      padding-left: 20px
+      background-color: #232529
       display: flex
-      padding-top: 100px
-      align-items: center
-
-    .content
+      flex-direction: column
       z-index: 1
 
-    #map
-      width: 100%
-      height: 100%
-      background-color: $main_bg_color
+      h2
+        margin-top: 40px
 
-    .toolbar
-      position: absolute
-      left: $main_margin_left
-      bottom: 30px
-      width: 80px
-      justify-content: space-between
-      display: flex
+      .table_container
+        max-height: 400px
+        overflow: scroll
+        margin: 0
 
-      a
-        width: 26px
-        height: 26px
-        display: inline-block
+      thead
+        text-transform: uppercase
+
+      table
+        background-color: transparent
         text-align: center
-        cursor: pointer
-      .setting
-        transform-origin: center
-        transform: rotate(0deg)
-        transition: $seting_sping
-      .setting:hover
-        transform: rotate(90deg)
-        transition: $seting_sping
 
-      .search
-        transform-origin: right center
-        transform: rotate(0deg)
-        transition: $seting_sping
-      .search:hover
-        transform: rotate(30deg)
-        transition: $seting_sping
+      #chart
+        width: 100%
+        margin-top: 20px
+        flex: 1
 
-  .right
-    width: 350px
-    padding-left: 20px
-    background-color: #232529
-    z-index: 1
-
-    h2
-      margin-top: 40px
-
-    .table_container
-      max-height: 400px
+@media screen and ( max-width:  1000px)
+  .covid_19
+    .main
+      display: flex
+      flex-direction: column
       overflow: scroll
-      margin: 0
 
-    thead
-      text-transform: uppercase
+      .content
+        .map
+          display: block
+          position: relative
+          padding: 0
+          width: 100%
+          height: 600px
 
-    table
-      background-color: transparent
-      text-align: center
+        #map
+          width: 100%
+          height: 100%
+          background-color: $main_bg_color
+
+      .right
+        width: 100%
+        display: block
+
+        #chart
+          width: 100%
+          height: 400px

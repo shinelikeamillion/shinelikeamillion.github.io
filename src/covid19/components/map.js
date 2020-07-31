@@ -1,19 +1,19 @@
 import React, { useEffect } from "react"
 import echarts from "echarts"
 import "echarts/map/js/china"
+import Toolbar from "./toolbar"
 
 const getOption = dataList => ({
   tooltip: {
-    formatter: function (params, ticket, callback) {
-      return params.seriesName + "<br />" + params.name + "：" + params.value
-    },
+    formatter: (params, ticket, callback) =>
+      params.seriesName + "<br />" + params.name + "：" + params.value,
   },
   visualMap: {
     min: 0,
     max: 1000,
     left: "left",
     top: "bottom",
-    text: ["高", "低"],
+    text: ["high", "low"],
     inRange: {
       color: ["#222222", "#F85E5E", "#FF3A3A", "#FF0000"],
     },
@@ -52,14 +52,18 @@ const getOption = dataList => ({
 
 const Map = ({ dataList }) => {
   useEffect(() => {
-    const map = echarts.init(document.getElementById("map"))
+    const map = echarts.init(document.getElementById("map"), "dark")
     map.setOption(getOption(dataList))
-  }, [])
+    window.addEventListener("resize", () => map.resize())
+  }, [dataList])
+
   return (
     <div className="map">
       <div id="map">
         <a> 地图</a>
       </div>
+
+      <Toolbar />
     </div>
   )
 }
