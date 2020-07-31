@@ -1,0 +1,176 @@
+
+$main_margin_left: 60px  
+$main_bg_color: #292B2E
+$seting_sping: 300ms transform ease-in-out
+
+.covid_19
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif
+  box-sizing: content-box
+  display: flex
+  width: 100%
+  height: 100vh
+  background-color: $main_bg_color
+  color: #DDD
+
+  .left
+    width: 80px
+    align-items: center
+    text-align: center
+
+  .left
+    a
+      display: block
+
+  .left
+    background-color: #232529
+
+    .logo
+      height: 160px
+      display: flex
+      align-items: center
+      justify-content: center
+
+      svg
+        width: 40px
+        height: 40px
+        color: #EFC985
+
+    ul
+      margin: 0
+      padding: 0
+      list-style: none
+
+      li
+        margin-left: 0
+        margin-top: 40px
+        border-right: 3px solid transparent
+
+      li:hover
+        background-color: #333
+        border-right: 3px solid #EFC985
+
+      svg
+        width: 30px
+
+  .main
+    flex: 1
+    display: flex
+    flex-direction: column
+    position: relative
+
+    .title
+      margin-left: $main_margin_left
+      margin-top: 40px
+
+      h1
+        margin-bottom: 1px
+      span
+        width: 100%
+
+    .info
+      margin-left: $main_margin_left
+      display: flex
+      max-width: 540px
+
+      .item_info
+        margin-top: 10px
+        display: flex
+        align-items: center
+        justify-content: left
+        flex: 1
+
+        .item_content
+          .content_top
+            display: flex
+            align-items: center
+
+            .top_name
+              font-size: 10px
+              margin-right: 8px
+              color: #BBB
+            .top_change
+              margin-top: 6px
+              font-size: 12px
+              line-height: 1
+
+          span
+            display: inline-block
+            line-height: 1
+
+          .value
+            font-size: 18px
+            letter-spacing: .1em
+
+        svg
+          width: 36px
+          height: 36px
+          margin-right: 10px
+
+    .map
+      position: absolute
+      z-index: 0
+      top: 0
+      width: 100%
+      height: 100vh
+      display: flex
+      padding-top: 100px
+      align-items: center
+
+    .content
+      z-index: 1
+
+    #map
+      width: 100%
+      height: 100%
+      background-color: $main_bg_color
+
+    .toolbar
+      position: absolute
+      left: $main_margin_left
+      bottom: 30px
+      width: 80px
+      justify-content: space-between
+      display: flex
+
+      a
+        width: 26px
+        height: 26px
+        display: inline-block
+        text-align: center
+        cursor: pointer
+      .setting
+        transform-origin: center
+        transform: rotate(0deg)
+        transition: $seting_sping
+      .setting:hover
+        transform: rotate(90deg)
+        transition: $seting_sping
+
+      .search
+        transform-origin: right center
+        transform: rotate(0deg)
+        transition: $seting_sping
+      .search:hover
+        transform: rotate(30deg)
+        transition: $seting_sping
+
+  .right
+    width: 350px
+    padding-left: 20px
+    background-color: #232529
+    z-index: 1
+
+    h2
+      margin-top: 40px
+
+    .table_container
+      max-height: 400px
+      overflow: scroll
+      margin: 0
+
+    thead
+      text-transform: uppercase
+
+    table
+      background-color: transparent
+      text-align: center

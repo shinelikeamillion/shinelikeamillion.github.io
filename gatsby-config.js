@@ -1,5 +1,3 @@
-require("dotenv").config()
-
 module.exports = {
   siteMetadata: {
     title: `shinelikeamillions`,
@@ -24,10 +22,10 @@ module.exports = {
       options: {
         name: `shinelikeamillion.io`,
         short_name: `shinelikeamillion`,
-        start_url: `/`,
+        start_url: `/covid_19/`,
         background_color: `#663399`,
         display: `minimal-ui`,
-        // icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/logo.png`,
       },
     },
     `gatsby-plugin-no-sourcemaps`,
