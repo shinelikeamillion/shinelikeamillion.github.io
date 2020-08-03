@@ -1,45 +1,38 @@
 import React from "react"
 import Map from "./map"
-import Info from "./main_info"
 import Right from "./aside_right"
-import jsonData from "../data/total_list.json"
+import World from "./world"
+import OpenSource from "./open_sources"
+import ME from "./me"
+import { useStateValue } from "../state/index"
 
-const chinaDetial = jsonData.areaTree.find(item => item.name === "中国")
-const chinaTotal = jsonData.chinaTotal
-const worldDetail = jsonData.areaTree.filter(item => item.name !== "中国")
-
-const sortedProvinces = Object.values(chinaDetial.children).sort(
-  (a, b) => b.total.confirm - a.total.confirm
-)
-const chinaDataList = Object.values(sortedProvinces)
-  .map(provience => ({
-    name: provience.name,
-    value: provience.total.confirm,
-  }))
-  .concat({ name: "南海诸岛", value: "0" })
-
-const worlddataList = Object.values(worldDetail).map(contry => ({
-  name,
-  value: contry.total.confirm,
-}))
-
-const headers = ["confirm", "heal", "dead"]
-const data = Object.values(sortedProvinces)
+const initContent = state => {
+  switch (state.tabIndex) {
+    case 0:
+      return (
+        <>
+          <div className="content">
+            <h1 className="title">
+              Coronavirus <span>COVID-19</span>
+            </h1>
+            <Map data={state.china} />
+          </div>
+          <Right data={state.china} />
+        </>
+      )
+    case 1:
+      return <World />
+    case 2:
+      return <OpenSource />
+    case 3:
+      return <ME />
+  }
+}
 
 const Main = () => {
-  return (
-    <div className="main">
-      <div className="content">
-        <div className="title">
-          <h1>Coronavirus COVID-19</h1>
-          <span>China Cases</span>
-        </div>
-        <Info chinaTotal={chinaTotal} />
-        <Map dataList={chinaDataList} />
-      </div>
-      <Right data={data} headers={headers} />
-    </div>
-  )
+  const [state] = useStateValue()
+  console.log(state.tabIndex)
+  return <div className="main">{initContent(state)}</div>
 }
 
 export default Main

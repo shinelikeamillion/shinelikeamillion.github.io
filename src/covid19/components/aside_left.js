@@ -6,11 +6,13 @@ import { Global } from "@styled-icons/remix-fill/Global"
 import { CurrentLocation } from "@styled-icons/boxicons-regular/CurrentLocation"
 import { OpenSource } from "@styled-icons/remix-fill/OpenSource"
 import { AboutDotMe } from "@styled-icons/simple-icons/AboutDotMe"
+import { useStateValue, tabIndex } from "../state/index"
 
 const Left = () => {
   const navs = [<CurrentLocation />, <Global />, <OpenSource />, <AboutDotMe />]
   const label = ["location", "global", "open source", "about me"]
-  const [index, setIndex] = useState(0)
+
+  const [state, dispatch] = useStateValue()
 
   return (
     <div className="left">
@@ -21,9 +23,9 @@ const Left = () => {
         {navs.map((nav, i) => (
           <li
             key={i}
-            className={i === index ? "active" : undefined}
+            className={i === state.tabIndex ? "active" : undefined}
             onClick={() => {
-              setIndex(i)
+              dispatch(tabIndex(i))
             }}
           >
             {nav}

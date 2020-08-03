@@ -5,31 +5,31 @@ import { ShieldVirus } from "@styled-icons/fa-solid/ShieldVirus"
 import { Addchart } from "@styled-icons/material-outlined/Addchart"
 import { BarChartAlt2 } from "@styled-icons/boxicons-solid/BarChartAlt2"
 
-const Info = ({ chinaTotal }) => {
+const Info = ({ data }) => {
   const currentInfo = [
     {
       name: "Infected",
-      value: chinaTotal.total.confirm,
+      value: data.total.confirm,
       icon: <BarChartAlt2 style={{ color: "#AC3D37" }} />,
-      change: chinaTotal.today.confirm,
+      change: data.today.confirm,
     },
     {
       name: "Active",
-      value: chinaTotal.today.storeConfirm,
+      value: data.today.storeConfirm,
       icon: <Addchart style={{ color: "#EEC884" }} />,
-      change: chinaTotal.today.confirm,
+      change: data.today.confirm,
     },
     {
       name: "Deaths",
-      value: chinaTotal.total.dead,
+      value: data.total.dead,
       icon: <LungsVirus style={{ color: "#FFFFFF" }} />,
-      change: chinaTotal.today.dead,
+      change: data.today.dead,
     },
     {
       name: "Recovered",
-      value: chinaTotal.total.heal,
+      value: data.total.heal,
       icon: <ShieldVirus style={{ color: "#76BFAD" }} />,
-      change: chinaTotal.today.heal,
+      change: data.today.heal,
     },
   ]
   return (
@@ -41,7 +41,7 @@ const Info = ({ chinaTotal }) => {
             <div className="content_top">
               <span className="top_name">{item.name}</span>
               <span className="top_change">{`${
-                Number(item.value) > 0 ? "+" : ""
+                Number(item.change) > 0 ? "+" : ""
               }${item.change}`}</span>
             </div>
             <span className="value">{item.value}</span>

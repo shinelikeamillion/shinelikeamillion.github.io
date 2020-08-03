@@ -3097,8 +3097,8 @@ axe-core@^3.5.4:
 
 axios@^0.19.2:
   version "0.19.2"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
-  integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
+  resolved "https://registry.npm.taobao.org/axios/download/axios-0.19.2.tgz?cache=0&sync_timestamp=1594827610645&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Faxios%2Fdownload%2Faxios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
+  integrity sha1-PqNsXYgY0NX4qKl6bTa4bNwAyyc=
   dependencies:
     follow-redirects "1.5.10"
 
@@ -5450,6 +5450,11 @@ ecc-jsbn@~0.1.1:
   dependencies:
     jsbn "~0.1.0"
     safer-buffer "^2.1.0"
+
+echarts-leaflet@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npm.taobao.org/echarts-leaflet/download/echarts-leaflet-1.1.0.tgz#6e6f282d1fc1472158296f1bc9ecdd1babea2a9a"
+  integrity sha1-bm8oLR/BRyFYKW8byezdG6vqKpo=
 
 echarts@^4.8.0:
   version "4.8.0"
@@ -9056,6 +9061,11 @@ latest-version@5.1.0, latest-version@^5.0.0:
   integrity sha512-weT+r0kTkRQdCdYCNtkMwWXQTMEswKrFBkm4ckQOMVhhqhIMI1UT2hMj+1iigIhgSZm5gTmrRXBNoGUgaTY1xA==
   dependencies:
     package-json "^6.3.0"
+
+leaflet@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.npm.taobao.org/leaflet/download/leaflet-1.6.0.tgz#aecbb044b949ec29469eeb31c77a88e2f448f308"
+  integrity sha1-rsuwRLlJ7ClGnusxx3qI4vRI8wg=
 
 leven@^3.1.0:
   version "3.1.0"
