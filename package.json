@@ -48,7 +48,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "git add . && git commit -m 'new stuff' &&  git push github master:source && cd public && git init && git add --all && git commit -m 'deploy' &&  git push github master",
+    "deploy": "cd public && git add --all && git commit -m 'deploy' &&  git push orign master",
     "test": "echo \"Write tests! -> && exit 1"
   },
   "repository": {
