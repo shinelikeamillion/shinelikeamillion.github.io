@@ -41,8 +41,8 @@ h1,
   background-size: cover;
   top: 0;
   left: 0;
-  animation: scale 20s infinite linear;
-  -webkit-animation: scale 20s infinite linear;
+  /* animation: scale 20s infinite linear; */
+  /* -webkit-animation: scale 20s infinite linear; */
 }
 
 .header {
@@ -160,6 +160,7 @@ h1,
   font-size: 40px;
   letter-spacing: 0.5em;
   font-family: "Rubik", sans-serif;
+  animation: 700ms ease slidein;
 }
 
 .mission span {
@@ -173,6 +174,7 @@ h1,
   line-height: 44px;
   letter-spacing: 2px;
   color: rgba(255, 255, 255, 0.8);
+  animation: 1s ease slidein;
 }
 
 .mission a {
@@ -297,5 +299,17 @@ h1,
 @keyframes scale {
   50% {
     -webkit-transform: scale(1.06);
+  }
+}
+
+@keyframes slidein {
+  from {
+    transform-origin: top;
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

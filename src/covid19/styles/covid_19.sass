@@ -176,43 +176,59 @@ $seting_sping: 300ms transform ease-in-out
         .toolbar
           position: absolute
           left: $main_margin_left
+          height: 30px
+          align-items: center
           bottom: 30px
-          min-width: 180px
           justify-content: space-between
           display: flex
 
           .search_bar
             position: relative
 
+          .search
+            align-items: center
+            margin-right: 30px
             input
               border: none
               padding-left: 10px
-              max-width: 100px
+              width: 40px
+              height: 30px
               background-color: rgba(100, 100, 100, .3)
               box-shadow: none
               border-radius: 20px
               transform-origin: left center
               color: #eee
-              transform: scaleX(0.5)
-              transition: $seting_sping
-
-            input:hover
-              transform: scaleX(1)
-              transition: $seting_sping
-
-            ul
-              position: absolute
-              width: 100%
-              bottom: 100%
-              list-style: none
+              transition: width 280ms
+            svg
+              width: 26px
+              height: 30px
               margin: 0
-              padding: 0
+              margin-left: -28px
+              transform-origin: center
+              transform: rotate(0deg)
+              transition: $seting_sping
 
-              li
-                font-size: 14px
-                padding: 4px
-              li:hover
-                background-color: rgba(200, 200, 200, .3)
+          .search_bar:hover
+            input
+              width: 100px
+              transition: width 280ms
+            svg
+              transform: rotate(45deg)
+              transition: $seting_sping
+
+          ul
+            position: absolute
+            width: 100%
+            bottom: 100%
+            list-style: none
+            margin: 0
+            padding: 0
+
+            li
+              font-size: 14px
+              padding: 4px
+            li:hover
+              background-color: rgba(200, 200, 200, .3)
           a
             width: 26px
             height: 26px
@@ -225,14 +241,6 @@ $seting_sping: 300ms transform ease-in-out
             transition: $seting_sping
           .setting:hover
             transform: rotate(90deg)
-            transition: $seting_sping
-
-          .search
-            transform-origin: right center
-            transform: rotate(0deg)
-            transition: $seting_sping
-          .search:hover
-            transform: rotate(30deg)
             transition: $seting_sping
 
     .right
@@ -310,7 +318,7 @@ $seting_sping: 300ms transform ease-in-out
         line-height: 1
 
       h4
-        margin-top: 20px
+        margin-top: 40px
 
 @media screen and ( max-width:  1000px)
   .main

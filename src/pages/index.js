@@ -2,6 +2,7 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Analy from "../components/firebase"
 import { intoFavionWithEmoji } from "../utils/utils"
 import RandomEmoji from "../components/randomEmoji"
 
@@ -10,6 +11,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
+      <Analy />
       <div
         style={{
           display: "flex",

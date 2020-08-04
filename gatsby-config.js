@@ -29,30 +29,5 @@ module.exports = {
       },
     },
     `gatsby-plugin-no-sourcemaps`,
-    {
-      resolve: "gatsby-plugin-firebase",
-      options: {
-        features: {
-          auth: false,
-          database: false,
-          firestore: false,
-          storage: false,
-          messaging: false,
-          functions: false,
-          performance: false,
-          analytics: true,
-        },
-        credentials: {
-          apiKey: "AIzaSyCFqnuhXSqNCAcBS49trh8GrRqZsww5n_w",
-          authDomain: "github-io-1f737.firebaseapp.com",
-          databaseURL: "https://github-io-1f737.firebaseio.com",
-          projectId: "github-io-1f737",
-          storageBucket: "github-io-1f737.appspot.com",
-          messagingSenderId: "234111469947",
-          appId: "1:234111469947:web:00047d1743f1d53d1015de",
-          measurementId: 'G-RPBYTVK1BM"',
-        },
-      },
-    },
   ],
 }
