@@ -29,5 +29,28 @@ module.exports = {
       },
     },
     `gatsby-plugin-no-sourcemaps`,
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Bungee+Outline`,
+            subsets: [`latin`],
+          },
+          {
+            family: `Rubik`,
+            variants: [`300`, `500`],
+          },
+          {
+            family: `Lora`,
+            variants: [`400`, `700`],
+          },
+          {
+            family: `Playfair+Display`,
+            variants: [`700i`, `900`],
+          },
+        ],
+      },
+    },
   ],
 }

@@ -2,6 +2,7 @@ import React from "react"
 
 import SEO from "../components/seo"
 import { Link } from "gatsby"
+import "./global.css"
 
 const NotFoundPage = () => (
   <div
@@ -21,7 +22,7 @@ const NotFoundPage = () => (
         textAlign: "center",
       }}
     >
-      <h1
+      <a
         style={{
           display: "block",
           fontSize: "400px",
@@ -32,7 +33,7 @@ const NotFoundPage = () => (
         }}
       >
         404
-      </h1>
+      </a>
       <Link to="/">
         <span
           style={{
