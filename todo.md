@@ -1,2 +1,0 @@
-* emoji to favicon
-* randomEmoji
