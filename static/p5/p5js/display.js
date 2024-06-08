@@ -1,25 +1,5 @@
 let size = 300
 let displays = [
-  function ($) {
-    let half = size / 2
-    let rect = 10
-    let num = size / rect
-    $.setup = _ => {
-      $.createCanvas(size, size)
-    }
-    $.draw = _ => {
-      for (let i = 0; i < num * num; i++) {
-        x = (i % num) * rect
-        y = $.int(i / num) * rect
-        d = $.frameCount * 0.000005
-        s =
-          128 *
-          (1 + $.sin(d * ((x - half) * (x - half) + (y - half) * (y - half))))
-        $.fill(s)
-        $.square(x, y, rect)
-      }
-    }
-  },
   // 方块
   function ($) {
     $.setup = $.draw = _ => {
@@ -43,6 +23,26 @@ let displays = [
             $.line((2 * j + 1) * $.size, i - 1, (2 * j + 2) * $.size, i + s)
           }
         }
+      }
+    }
+  },
+  function ($) {
+    let half = size / 2
+    let rect = 10
+    let num = size / rect
+    $.setup = _ => {
+      $.createCanvas(size, size)
+    }
+    $.draw = _ => {
+      for (let i = 0; i < num * num; i++) {
+        x = (i % num) * rect
+        y = $.int(i / num) * rect
+        d = $.frameCount * 0.000005
+        s =
+          128 *
+          (1 + $.sin(d * ((x - half) * (x - half) + (y - half) * (y - half))))
+        $.fill(s)
+        $.square(x, y, rect)
       }
     }
   },

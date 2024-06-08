@@ -4,10 +4,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Analy from "../components/firebase"
 import { intoFavionWithEmoji } from "../utils/utils"
-import RandomEmoji from "../components/randomEmoji"
 
 const IndexPage = () => {
-  intoFavionWithEmoji()
+  intoFavionWithEmoji();
   return (
     <Layout>
       <SEO title="Home" />

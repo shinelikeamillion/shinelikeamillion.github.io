@@ -2,7 +2,7 @@ import React from "react"
 
 import { LungsVirus } from "@styled-icons/fa-solid/LungsVirus"
 import { ShieldVirus } from "@styled-icons/fa-solid/ShieldVirus"
-import { Addchart } from "@styled-icons/material-outlined/Addchart"
+import { AddChart } from "@styled-icons/material-outlined/Addchart"
 import { BarChartAlt2 } from "@styled-icons/boxicons-solid/BarChartAlt2"
 
 const Info = ({ data }) => {
@@ -16,7 +16,7 @@ const Info = ({ data }) => {
     {
       name: "Active",
       value: data.today.storeConfirm,
-      icon: <Addchart style={{ color: "#EEC884" }} />,
+      icon: <AddChart style={{ color: "#EEC884" }} />,
       change: data.today.confirm,
     },
     {

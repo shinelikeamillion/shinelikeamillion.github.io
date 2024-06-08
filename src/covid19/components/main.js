@@ -31,7 +31,7 @@ const initContent = state => {
 
 const Main = () => {
   const [state] = useStateValue()
-  console.log(state.tabIndex)
+  // console.log(state.tabIndex)
   return <div className="main">{initContent(state)}</div>
 }
 

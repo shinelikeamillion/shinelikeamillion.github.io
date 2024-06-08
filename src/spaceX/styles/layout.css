@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Bungee+Outline&family=Rubik:wght@300;500family=Lato:400,700family=Lora&family=Playfair+Display:700i,900&display=swap");
 
+body{
+  overflow: hidden;
+}
+
 .container {
   margin: 0;
   padding: 0;
@@ -41,8 +45,8 @@ h1,
   background-size: cover;
   top: 0;
   left: 0;
-  /* animation: scale 20s infinite linear; */
-  /* -webkit-animation: scale 20s infinite linear; */
+  animation: scale 20s infinite linear;
+  -webkit-animation: scale 20s infinite linear;
 }
 
 .header {

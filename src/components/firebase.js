@@ -1,6 +1,6 @@
 import React from "react"
-import firebase from "firebase/app"
-import "firebase/analytics"
+import { initializeApp } from "firebase/app";
+import { getAnalytics, logEvent } from "firebase/analytics";
 
 const firebaseConfig = {
   apiKey: "AIzaSyB3RqHtFtJNN7fpWhpuZdSdnqabhybp5N0",
@@ -13,10 +13,9 @@ const firebaseConfig = {
   measurementId: "G-MYX70V4G28",
 }
 const Firebase = () => {
-  if (!firebase.apps.length && typeof window !== "undefined") {
-    firebase.initializeApp(firebaseConfig)
-    firebase.analytics().logEvent("first_init.")
-  }
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  logEvent(analytics, "first_init.")
   return <></>
 }
 
