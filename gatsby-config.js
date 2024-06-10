@@ -28,6 +28,5 @@ module.exports = {
         icon: `src/images/logo.png`,
       },
     },
-    `gatsby-plugin-no-sourcemaps`,
   ],
 }

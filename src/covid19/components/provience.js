@@ -1,4 +1,4 @@
-import React, { useEffect, Suspense } from "react"
+import React, { useEffect } from "react"
 import echarts from "echarts"
 // import jsonData from "echarts/map/json/province/hubei.json"
 

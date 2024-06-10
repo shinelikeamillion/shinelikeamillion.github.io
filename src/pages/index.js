@@ -1,16 +1,16 @@
-import React from "react"
+import React, { useEffect } from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Analy from "../components/firebase"
+import Firebase from "../components/firebase"
 import { intoFavionWithEmoji } from "../utils/utils"
 
 const IndexPage = () => {
-  intoFavionWithEmoji();
+  intoFavionWithEmoji()
   return (
     <Layout>
       <SEO title="Home" />
-      <Analy />
+      <Firebase />
       <div
         style={{
           display: "flex",

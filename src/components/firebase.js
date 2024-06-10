@@ -1,6 +1,6 @@
 import React from "react"
 import { initializeApp } from "firebase/app";
-import { getAnalytics, logEvent } from "firebase/analytics";
+import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
   apiKey: "AIzaSyB3RqHtFtJNN7fpWhpuZdSdnqabhybp5N0",
@@ -14,9 +14,8 @@ const firebaseConfig = {
 }
 const Firebase = () => {
   const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-  logEvent(analytics, "first_init.")
+  getAnalytics(app).logEvent("first_init.")
   return <></>
 }
 
-export default Firebase
+export default Firebase;
